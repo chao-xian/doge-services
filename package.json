@@ -1,0 +1,30 @@
+{
+  "name": "doge-services",
+  "version": "0.0.0",
+  "description": "",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/chao-xian/doge-services.git"
+  },
+  "author": "",
+  "license": "BSD-2-Clause",
+  "bugs": {
+    "url": "https://github.com/chao-xian/doge-services/issues"
+  },
+  "dependencies": {
+    "grunt": "~0.4.5"
+  },
+  "devDependencies": {
+    "grunt-contrib-qunit": "~0.5.1",
+    "grunt-contrib-uglify": "~0.5.0",
+    "grunt-contrib-connect": "~0.8.0",
+    "grunt-contrib-sass": "~0.7.3"
+  }
+}
