@@ -1,5 +1,8 @@
 module.exports = function(grunt) {
 
+  // Automatically load all the plugins
+  require('load-grunt-tasks')(grunt);
+
   // Project configuration.
   grunt.initConfig({
     qunit: {
@@ -30,20 +33,27 @@ module.exports = function(grunt) {
           keepalive: true
         }
       }
+    },
+    watch: {
+      options: {
+        livereload: true
+      },
+      sass: {
+        files: ['sass/*.sass'],
+        tasks: ['sass']
+      },
+      tests: {
+        files: ['test/tests.js'],
+        tasks: ['qunit']
+      }
+    },
+    concurrent: {
+      things: ['watch', 'connect'],
+      options: {
+        logConcurrentOutput: true
+      }
     }
   });
-
-  // Load the plugin that provides the "uglify" task.
-  grunt.loadNpmTasks('grunt-contrib-uglify');
-
-  // Load the ruby-sass plugin for SASS compiling
-  grunt.loadNpmTasks('grunt-contrib-sass');
-
-  // Load the Qunit plugin for running tests
-  grunt.loadNpmTasks('grunt-contrib-qunit');
-
-  // Load connect plugin for serving site
-  grunt.loadNpmTasks('grunt-contrib-connect');
 
   // Serve site task
   grunt.registerTask('serve', ['connect']);
