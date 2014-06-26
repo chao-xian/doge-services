@@ -1,13 +1,13 @@
 module.exports = function(grunt) {
 
+  // Load profiler plugin
+  require('time-grunt')(grunt);
+
   // Automatically load all the plugins
   require('load-grunt-tasks')(grunt);
 
   // Project configuration.
   grunt.initConfig({
-    qunit: {
-      all: ['test/*.html']
-    },
     uglify: {
       build: {
         files: {
@@ -54,6 +54,9 @@ module.exports = function(grunt) {
       }
     }
   });
+
+  // Load tasks organised into other files
+  grunt.loadTasks('grunt-tasks');
 
   // Serve site task
   grunt.registerTask('serve', ['connect']);

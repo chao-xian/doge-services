@@ -29,6 +29,7 @@
     "load-grunt-tasks": "~0.6.0",
     "grunt-contrib-watch": "~0.6.1",
     "grunt-notify": "~0.3.0",
-    "grunt-concurrent": "~0.5.0"
+    "grunt-concurrent": "~0.5.0",
+    "time-grunt": "~0.3.2"
   }
 }
